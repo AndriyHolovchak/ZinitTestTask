@@ -1,12 +1,15 @@
 <nav id="header" class="navbar navbar-static-top navbar-inverse">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12 text-right">
+                <p class="clock">{{ navbar.clock | date:'HH:mm:ss'}}</p>
+            </div>
             <div class="col-md-12">
-            <ul class="nav navbar-nav navbar-right acme-navbar-text">
-                <li>Wunchlisten</li>
-                <li>EUR</li>
-                <li>Service</li>
-            </ul>
+                <ul class="nav navbar-nav navbar-right acme-navbar-text">
+                    <li>Wunchlisten</li>
+                    <li>EUR</li>
+                    <li>Service</li>
+                </ul>
             </div>
         </div>
         <div class="row">

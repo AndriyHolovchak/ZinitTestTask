@@ -14,15 +14,25 @@
           creationDate: '='
       },
       controller: NavbarController,
-      controllerAs: 'vm',
+      controllerAs: 'navbar',
       bindToController: true
     };
 
     return directive;
 
     /** @ngInject */
-    function NavbarController() {
-      //var vm = this;
+    function NavbarController($timeout) {
+      var vm = this;
+      vm.clock = "loading clock..."; // initialise the time variable
+      vm.tickInterval = 1000 //ms
+
+      var tick = function () {
+        vm.clock = Date.now() // get the current time
+        $timeout(tick, vm.tickInterval); // reset the timer
+      }
+
+      // Start the timer
+      $timeout(tick, vm.tickInterval);
     }
   }
 
