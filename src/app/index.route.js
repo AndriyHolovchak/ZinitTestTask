@@ -19,6 +19,11 @@
                 templateUrl: 'app/templates/home.html',
                 controller: 'HomeController',
                 controllerAs: 'home'
+            }).state('main.provence', {
+                url: 'provence',
+                templateUrl: 'app/templates/provence.html',
+                controller: 'ProvenceController',
+                controllerAs: 'provence'
             });
 
         $urlRouterProvider.otherwise('/home');

@@ -8,7 +8,8 @@
                 <ul class="nav navbar-nav navbar-right acme-navbar-text">
                     <li><i class="glyphicon glyphicon-list-alt"></i> Wunchlisten</li>
                     <li><i class="glyphicon glyphicon-euro"></i> EUR <i class="glyphicon glyphicon-menu-down"></i></li>
-                    <li><i class="glyphicon glyphicon-question-sign"></i> Service/Hilfe <i class="glyphicon glyphicon-menu-down"></i></li>
+                    <li><i class="glyphicon glyphicon-question-sign"></i> Service/Hilfe <i
+                            class="glyphicon glyphicon-menu-down"></i></li>
                 </ul>
             </div>
         </div>
@@ -19,20 +20,24 @@
                 <i class="glyphicon glyphicon-search"></i>
             </div>
             <div class="col-md-4 text-right">
-                <button class="btn wishlist"><i class="glyphicon glyphicon-heart"></i><span class="badge">3</span></button>
+                <button class="btn wishlist"><i class="glyphicon glyphicon-heart"></i><span class="badge">3</span>
+                </button>
                 <button class="btn"><i class="glyphicon glyphicon-user"></i> Main Kontro</button>
-                <button class="btn"><i class="glyphicon glyphicon-shopping-cart"></i> 0.00 <i class="glyphicon glyphicon-euro"></i></button>
+                <button class="btn"><i class="glyphicon glyphicon-shopping-cart"></i><span class="cart"> 0.00 <i
+                        class="glyphicon glyphicon-euro"></i> *</span></button>
             </div>
         </div>
         <div class="row">
-            <ul class="menu nav navbar-nav navbar-left">
-                <li>Home</li>
-                <li>Hohenluft & Abenteuer</li>
-                <li>Kochlust & Provence</li>
-                <li>Handwerk & Tradition</li>
-                <li>Specials & Sale</li>
-                <li>Blog</li>
-            </ul>
+            <div class="col-md-12">
+                <ul class="menu nav navbar-nav navbar-left">
+                    <li ui-sref="main.home()">Home</li>
+                    <li ui-sref="main.home()">Hohenluft & Abenteuer</li>
+                    <li ui-sref="main.provence()" ng-class="{active: main.stateName === 'main.provence'}">Kochlust & Provence</li>
+                    <li ui-sref="main.home()">Handwerk & Tradition</li>
+                    <li ui-sref="main.home()">Specials & Sale</li>
+                    <li ui-sref="main.home()">Blog</li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

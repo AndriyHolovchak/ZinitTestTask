@@ -36,6 +36,10 @@
     }
   }
 
+  .cart {
+    color: #dd430d;
+  }
+
   ul {
     li {
       margin: 10px 10px;
@@ -50,7 +54,7 @@
         color: #777;
       }
 
-    li:hover {
+    li:hover, li.active {
       background: #dd430d;
       color: #fff;
       border-radius: 5px 5px 0px 0px;

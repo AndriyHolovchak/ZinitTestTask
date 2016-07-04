@@ -13,9 +13,6 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'app/components/footer/footer.html',
-            scope: {
-                creationDate: '='
-            },
             controller: FooterController,
             controllerAs: 'footer',
             bindToController: true
