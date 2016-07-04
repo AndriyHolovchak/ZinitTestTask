@@ -6,9 +6,34 @@
     display: inline-block;
     background: #e9e9f1;
     padding: 5px;
-    border-radius: 5px;
     margin: 0;
     color: #dd430d;;
+  }
+
+  .glyphicon-search {
+    position: absolute;
+    right: 25px;
+    font-size: 18px;
+    top: 8px;
+    color: #777;
+  }
+
+  .btn {
+    margin-left: 10px;
+    background: #f6f6f6;
+    border: 1px solid #ccc;
+  }
+
+  .wishlist {
+    position: relative;
+    .badge {
+      position: absolute;
+      background: #fff;
+      color: #777;
+      border: 1px solid #777;
+      right: -10px;
+      top: -6px;
+    }
   }
 
   ul {
