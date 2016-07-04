@@ -1,14 +1,14 @@
 <nav id="header" class="navbar navbar-static-top navbar-inverse">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 text-right">
-                <p class="clock">{{ navbar.clock | date:'HH:mm:ss'}}</p>
+                <p class="clock"><i class="glyphicon glyphicon-time"></i> {{ navbar.clock | date:'HH:mm:ss'}}</p>
             </div>
             <div class="col-md-12">
                 <ul class="nav navbar-nav navbar-right acme-navbar-text">
-                    <li>Wunchlisten</li>
-                    <li>EUR</li>
-                    <li>Service</li>
+                    <li><i class="glyphicon glyphicon-list-alt"></i> Wunchlisten</li>
+                    <li><i class="glyphicon glyphicon-euro"></i> EUR <i class="glyphicon glyphicon-menu-down"></i></li>
+                    <li><i class="glyphicon glyphicon-question-sign"></i> Service/Hilfe <i class="glyphicon glyphicon-menu-down"></i></li>
                 </ul>
             </div>
         </div>
