@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4"><h1>DemoShop</h1></div>
+            <div class="col-md-4"><h1>Demo<span>Shop</span></h1></div>
             <div class="col-md-4 text-center">
                 <input type="text" class="form-control" placeholder="Search">
                 <i class="glyphicon glyphicon-search"></i>
@@ -30,9 +30,11 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="menu nav navbar-nav navbar-left">
-                    <li ui-sref="main.home()">Home</li>
+                    <li ui-sref="main.home()" ng-class="{active: main.stateName === 'main.home'}">Home</li>
                     <li ui-sref="main.home()">Hohenluft & Abenteuer</li>
-                    <li ui-sref="main.provence()" ng-class="{active: main.stateName === 'main.provence'}">Kochlust & Provence</li>
+                    <li ui-sref="main.provence()" ng-class="{active: main.stateName === 'main.provence'}">Kochlust &
+                        Provence
+                    </li>
                     <li ui-sref="main.home()">Handwerk & Tradition</li>
                     <li ui-sref="main.home()">Specials & Sale</li>
                     <li ui-sref="main.home()">Blog</li>

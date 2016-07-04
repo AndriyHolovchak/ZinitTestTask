@@ -1,3 +1,69 @@
 #provence {
+  .provence-body {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
+    .breadcrumb {
+      background: none;
+      color: #777;
+      margin: 10px 20px;
+      .active {
+        color: #dd430d;
+      }
+    }
+
+    .breadcrumb > li + li:before {
+      content: "> ";
+      padding: 0 5px;
+      color: #777;
+    }
+
+    hr {
+      margin-top: 0;
+    }
+
+    .top-seller {
+      margin: 35px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+
+      .thumbnail {
+        height: initial;
+        padding: 0;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 0;
+
+        .caption {
+          min-height: 110px;
+          color: #777;
+          .name {
+            font-size: 16px;
+          }
+          .price {
+            font-weight: 600;
+            font-size: 18px;
+            .glyphicon-euro {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .caption:hover h4 {
+          color: #e74343;
+        }
+        .thumbnail-img {
+          height: 200px;
+          background-position: center center;
+          background-size: contain;
+          text-align: right;
+          background-repeat: no-repeat;
+        }
+
+      }
+    }
+
+
+  }
 }

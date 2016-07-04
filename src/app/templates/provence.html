@@ -1,5 +1,39 @@
 <div id="provence">
     <div class="container">
-        <h1>vbfdbf</h1>
+        <div class="provence-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li>Kochlust & Provence</li>
+                        <li>Essen</li>
+                        <li>Ole & Gevurze</li>
+                        <li class="active">Essig & OE</li>
+                    </ul>
+                    <hr/>
+                    <div class="top-seller">
+                        <h4>Topseller</h4>
+                        <hr/>
+
+                        <div class="row">
+                            <div class="col-md-3" ng-repeat="item in provence.topseller">
+                                <div class="thumbnail">
+                                    <div class="thumbnail-img" ng-style="{'background-image': 'url({{item.img_url}})'}">
+                                    </div>
+                                        <div class="caption">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center"><p class="name">{{item.name}}</p></div>
+                                                <br/><br/><br/>
+                                                <div class="col-md-12 text-center"><p><b>Inhalt </b>{{item.inhalt}}</p></div>
+                                                <div class="col-md-12 text-center"><p class="price">{{item.price}}
+                                                    <i class="glyphicon glyphicon-euro"></i> *</p></div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
