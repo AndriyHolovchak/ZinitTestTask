@@ -1,0 +1,41 @@
+<div id="cart">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4><i class="glyphicon glyphicon-menu-left"></i> Weiter einkaufen</h4>
+        </div>
+        <div class="modal-body">
+            <div ng-repeat="item in cart.products">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" ng-src="{{item.img_url}}" alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <p>{{item.name}}</p>
+                        <p>{{item.inhalt}}</p>
+                        <p><b>{{item.price}} <i class="glyphicon glyphicon-euro"></i></b></p>
+                    </div>
+                    <hr/>
+                    <button class="btn"><i class="glyphicon glyphicon-remove"></i></button>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th>Zwichensumme</th>
+                    <th>9.00 <i class="glyphicon glyphicon-euro"></i></th>
+                </tr>
+                <tr>
+                    <td><b>Punkte fur die Bestellung</b></td>
+                    <td class="bestellung"><b>+ 4 </b><span class="punkte">P</span></td>
+                </tr>
+                <tr>
+                    <td><b>Punkte eingelost</b></td>
+                    <td class="eingelost"><b>- 0 </b><span class="punkte">P</span></td>
+                </tr>
+            </table>
+            <button class="btn kasse">Zur Kasse <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
+            <button class="btn bearbeiten">Warenkorb bearbeiten <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
+        </div>
+    </div>
+</div>

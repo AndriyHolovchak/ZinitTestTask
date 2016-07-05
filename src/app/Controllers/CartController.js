@@ -1,5 +1,5 @@
 /**
- * Created by Andriy on 07/04/2016.
+ * Created by Andriy on 07/05/2016.
  */
 
 (function() {
@@ -7,13 +7,13 @@
 
     angular
             .module('zinitTestTask')
-            .controller('ProvenceController', ProvenceController);
+            .controller('CartController', CartController);
 
     /** @ngInject */
-    function ProvenceController($uibModal) {
+    function CartController() {
         var vm = this;
 
-        vm.topseller = [
+        vm.products = [
             {
                 id: 1,
                 name: "Quinta de Sao Vicente Essig",
@@ -36,15 +36,5 @@
                 img_url: "http://www.shopwaredemo.co.uk/media/image/52/1c/6b/SW10102_600x600.png"
             }
         ];
-
-        vm.addToCart = function() {
-            return $uibModal.open({
-                keyboard: false,
-                animation: true,
-                templateUrl: 'app/templates/modal-cart.html',
-                controller: 'CartController',
-                controllerAs: 'cart'
-            });
-        }
     }
 })();
