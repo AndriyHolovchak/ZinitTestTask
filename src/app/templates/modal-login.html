@@ -1,0 +1,15 @@
+<div id="login">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="text-center">Enter your name!</h4>
+        </div>
+        <div class="modal-body">
+            <form ng-submit="login.login(credentialLogin)">
+                <div class="form-group">
+                    <input ng-model="credentialLogin.name" type="text" maxlength="20" class="form-control" placeholder="Name" required>
+                </div>
+                <button class="btn">Save this name</button>
+            </form>
+        </div>
+    </div>
+</div>

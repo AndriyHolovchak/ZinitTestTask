@@ -22,10 +22,13 @@
             <div class="col-md-4 text-right">
                 <button class="btn wishlist"><i class="glyphicon glyphicon-heart"></i><span class="badge">3</span>
                 </button>
-                <button class="btn"><i class="glyphicon glyphicon-user"></i> Main Kontro</button>
+                <button class="btn"><i class="glyphicon glyphicon-user"></i> {{$root.userData.name | limitTo: 10 }}{{$root.userData.name.length > 10 ? '...' : ''}}</button>
                 <button ng-click="navbar.showCart()" class="btn"><i class="glyphicon glyphicon-shopping-cart"></i><span class="cart"> {{$root.cartSum | number:2}} <i
                         class="glyphicon glyphicon-euro"></i> *</span></button>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right"><p class="wish">{{navbar.partOfDay}} {{$root.userData.name}}</p></div>
         </div>
         <div class="row">
             <div class="col-md-12">
