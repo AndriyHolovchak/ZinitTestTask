@@ -26,16 +26,16 @@
                 controllerAs: 'provence'
             }).state('main.adventure', {
                 url: 'adventure',
-                templateUrl: 'app/templates/adventure.html',
+                templateUrl: 'app/templates/adventure.html'
             }).state('main.tradition', {
                 url: 'tradition',
-                templateUrl: 'app/templates/tradition.html',
+                templateUrl: 'app/templates/tradition.html'
             }).state('main.specials', {
                 url: 'specials',
-                templateUrl: 'app/templates/specials.html',
+                templateUrl: 'app/templates/specials.html'
             }).state('main.blog', {
                 url: 'blog',
-                templateUrl: 'app/templates/blog.html',
+                templateUrl: 'app/templates/blog.html'
             });
 
         $urlRouterProvider.otherwise('/home');
