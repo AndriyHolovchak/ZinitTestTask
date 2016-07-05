@@ -23,7 +23,7 @@
             <table>
                 <tr>
                     <th>Zwichensumme</th>
-                    <th>9.00 <i class="glyphicon glyphicon-euro"></i></th>
+                    <th>{{$root.cartSum | number:2}} <i class="glyphicon glyphicon-euro"></i></th>
                 </tr>
                 <tr>
                     <td><b>Punkte fur die Bestellung</b></td>
@@ -38,7 +38,7 @@
             <button class="btn bearbeiten">Warenkorb bearbeiten <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
         </div>
         <div ng-if="!cart.isCart" class="modal-body">
-            <h4>Cart is empty!</h4>
+            <h3 class="cart-empty text-center">Cart is empty!</h3>
         </div>
     </div>
 </div>

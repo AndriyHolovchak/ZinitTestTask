@@ -10,7 +10,7 @@
             .controller('ProvenceController', ProvenceController);
 
     /** @ngInject */
-    function ProvenceController($uibModal, $localStorage, lodash) {
+    function ProvenceController($rootScope, $uibModal, $localStorage, lodash) {
         var vm = this;
 
         vm.topseller = [
@@ -57,6 +57,8 @@
             var product = findObById(id, vm.topseller);
             $localStorage.cart.push(product);
             product.inCart = true;
+            $rootScope.cartSum += product.price;
+            $rootScope.cartSum = Math.round($rootScope.cartSum*100)/100;
             return $uibModal.open({
                 keyboard: false,
                 animation: true,
@@ -69,6 +71,8 @@
         vm.removeFromCart= function(id) {
             lodash.remove($localStorage.cart, function(i) {
                 if (i.id == id) {
+                    $rootScope.cartSum -= i.price;
+                    $rootScope.cartSum = Math.round($rootScope.cartSum*100)/100;
                     var prodObj  = lodash.find(vm.topseller, function(obj) { return obj.id == i.id });
                     if (prodObj) {
                         prodObj.inCart = false;

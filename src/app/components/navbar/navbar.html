@@ -23,7 +23,7 @@
                 <button class="btn wishlist"><i class="glyphicon glyphicon-heart"></i><span class="badge">3</span>
                 </button>
                 <button class="btn"><i class="glyphicon glyphicon-user"></i> Main Kontro</button>
-                <button ng-click="navbar.showCart()" class="btn"><i class="glyphicon glyphicon-shopping-cart"></i><span class="cart"> 0.00 <i
+                <button ng-click="navbar.showCart()" class="btn"><i class="glyphicon glyphicon-shopping-cart"></i><span class="cart"> {{$root.cartSum | number:2}} <i
                         class="glyphicon glyphicon-euro"></i> *</span></button>
             </div>
         </div>
