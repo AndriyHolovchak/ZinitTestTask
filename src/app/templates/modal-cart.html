@@ -3,7 +3,7 @@
         <div class="modal-header">
             <h4><i class="glyphicon glyphicon-menu-left"></i> Weiter einkaufen</h4>
         </div>
-        <div class="modal-body">
+        <div ng-if="cart.isCart" class="modal-body">
             <div ng-repeat="item in cart.products">
                 <div class="media">
                     <div class="media-left">
@@ -17,7 +17,7 @@
                         <p><b>{{item.price}} <i class="glyphicon glyphicon-euro"></i></b></p>
                     </div>
                     <hr/>
-                    <button class="btn"><i class="glyphicon glyphicon-remove"></i></button>
+                    <button ng-click="cart.removeFromCart(item.id)" class="btn"><i class="glyphicon glyphicon-remove"></i></button>
                 </div>
             </div>
             <table>
@@ -36,6 +36,9 @@
             </table>
             <button class="btn kasse">Zur Kasse <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
             <button class="btn bearbeiten">Warenkorb bearbeiten <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
+        </div>
+        <div ng-if="!cart.isCart" class="modal-body">
+            <h4>Cart is empty!</h4>
         </div>
     </div>
 </div>

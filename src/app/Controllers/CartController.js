@@ -10,10 +10,30 @@
             .controller('CartController', CartController);
 
     /** @ngInject */
-    function CartController() {
+    function CartController($localStorage, lodash, $state) {
         var vm = this;
+        vm.isCart = false;
 
-        vm.products = [
+        if($localStorage.cart) {
+            vm.products = $localStorage.cart;
+            if (vm.products.length) {
+                vm.isCart = true;
+            }
+        }
+
+        vm.removeFromCart = function(id) {
+            lodash.remove($localStorage.cart, function(i) {
+                if (i.id == id) {
+                    return true;
+                }
+            });
+            if (!vm.products.length) {
+                vm.isCart = false;
+            }
+            $state.go($state.current, {}, {reload: true});
+        }
+
+       /* vm.products = [
             {
                 id: 1,
                 name: "Quinta de Sao Vicente Essig",
@@ -35,6 +55,6 @@
                 inhalt: "0.25 Liter (37.60/ 1 Liter)",
                 img_url: "http://www.shopwaredemo.co.uk/media/image/52/1c/6b/SW10102_600x600.png"
             }
-        ];
+        ];*/
     }
 })();

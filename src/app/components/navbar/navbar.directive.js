@@ -18,7 +18,7 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController($timeout) {
+    function NavbarController($timeout, $uibModal) {
       var vm = this;
       vm.clock = "loading clock..."; // initialise the time variable
       vm.tickInterval = 1000 //ms
@@ -30,6 +30,16 @@
 
       // Start the timer
       $timeout(tick, vm.tickInterval);
+
+      vm.showCart = function() {
+        return $uibModal.open({
+          keyboard: false,
+          animation: true,
+          templateUrl: 'app/templates/modal-cart.html',
+          controller: 'CartController',
+          controllerAs: 'cart'
+        });
+      }
     }
   }
 

@@ -10,7 +10,7 @@
             .controller('ProvenceController', ProvenceController);
 
     /** @ngInject */
-    function ProvenceController($uibModal) {
+    function ProvenceController($uibModal, $localStorage, lodash) {
         var vm = this;
 
         vm.topseller = [
@@ -37,7 +37,26 @@
             }
         ];
 
-        vm.addToCart = function() {
+        //function for find object in array by id;
+        function findObById(id, arr) {
+            return lodash.find(arr, function(obj) { return obj.id == id });
+        }
+
+        function isInWishList() {
+            lodash($localStorage.cart).forEach(function(value) {
+                var prodObj  = lodash.find(vm.topseller, function(obj) { return obj.id == value.id });
+                if (prodObj) {
+                    prodObj.inCart = true;
+                }
+            });
+        }
+
+        $localStorage.cart = $localStorage.cart || [];
+
+        vm.addToCart = function(id) {
+            var product = findObById(id, vm.topseller);
+            $localStorage.cart.push(product);
+            product.inCart = true;
             return $uibModal.open({
                 keyboard: false,
                 animation: true,
@@ -46,5 +65,26 @@
                 controllerAs: 'cart'
             });
         }
+
+        vm.removeFromCart= function(id) {
+            lodash.remove($localStorage.cart, function(i) {
+                if (i.id == id) {
+                    var prodObj  = lodash.find(vm.topseller, function(obj) { return obj.id == i.id });
+                    if (prodObj) {
+                        prodObj.inCart = false;
+                    }
+                    return true;
+                }
+            });
+            return $uibModal.open({
+                keyboard: false,
+                animation: true,
+                templateUrl: 'app/templates/modal-cart.html',
+                controller: 'CartController',
+                controllerAs: 'cart'
+            });
+        }
+
+        isInWishList();
     }
 })();
