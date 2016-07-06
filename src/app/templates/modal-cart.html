@@ -34,7 +34,7 @@
                     <td class="eingelost"><b>- 0 </b><span class="punkte">P</span></td>
                 </tr>
             </table>
-            <button class="btn kasse">Zur Kasse <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
+            <button class="btn kasse" ng-click="cart.zurKasse()">Zur Kasse <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
             <button class="btn bearbeiten">Warenkorb bearbeiten <i class="glyphicon glyphicon-menu-right pull-right"></i></button>
         </div>
         <div ng-if="!cart.isCart" class="modal-body">
